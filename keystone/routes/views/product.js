@@ -4,12 +4,12 @@ exports = module.exports = function (req, res) {
 
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
-	
+
 	locals.main_promo = {};
 	locals.info_blocks = [];
 	locals.infogr = {};
 	locals.footer_promo={};
-	
+
 	function getInfoBlock (key, next) {
 		var q = keystone.list('Product').model.findOne({
 			key: key
@@ -19,7 +19,7 @@ exports = module.exports = function (req, res) {
 			next(err);
 		});
 	}
-	
+
 	// Load the current product data
 	view.on('init', function (next) {
 		var q = keystone.list('Product').model.findOne({
@@ -69,10 +69,10 @@ exports = module.exports = function (req, res) {
 			next(err);
 		});
 	});
-	
+
 
 	locals.section = 'Product';
 
 	// Render the view
-	view.render('Product');
+	view.render('product');
 };
