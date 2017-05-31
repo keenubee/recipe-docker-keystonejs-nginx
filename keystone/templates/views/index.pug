@@ -1,0 +1,187 @@
+extends ../layouts/default
+
+block content
+	.wrapper
+		div.section_main_mainpromo
+			.section_main_mainpromo_title!=  info_blocks[0].title
+			p!=	 info_blocks[0].briefText
+			.section_main_mainpromo_buttons
+				a(href='/keystone/signin') Get Started
+				a(href='https://www.youtube.com/' target='_blank') Play Video
+		.section_main_text
+			p!= info_blocks[1].briefText
+		.section_main_promoicons
+			.section_main_iconblock
+				.section_main_iconblock_inner
+					.section_main_popup1
+						p!= info_blocks[2].fullText
+						button(class='section_main_popup_close' onclick='onCloseText(this)') x
+					.section_main_popup_triangle1
+					.section_main_popup_triangle1.white
+					if info_blocks[2].image.exists
+						.imageWrapper
+							img(class='section_main_iconblock_image' src=info_blocks[2].image.secure_url width='150' height='150').imageStyle
+							if info_blocks[2].imageActive.exists
+								img(class='section_main_iconblock_imageActive' src=info_blocks[2].imageActive.secure_url width='150' height='150').imageStyle
+					.section_main_iconblock_title!= info_blocks[2].title
+					.section_main_iconblock_text!= info_blocks[2].briefText
+					.section_main_iconblock_linkwrapper
+						a(onclick="onFullText(this)").section_main_iconblock_link read more
+				.section_main_iconblock_inner
+					.section_main_popup2
+						p
+						button(class='section_main_popup_close' onclick='onCloseText(this)') x
+					.section_main_popup_triangle2
+					.section_main_popup_triangle2.white
+					if info_blocks[3].image.exists
+						.imageWrapper
+							img(class='section_main_iconblock_image' src=info_blocks[3].image.secure_url width='150' height='150').imageStyle
+							if info_blocks[3].imageActive.exists
+								img(class='section_main_iconblock_imageActive' src=info_blocks[3].imageActive.secure_url width='150' height='150').imageStyle
+					.section_main_iconblock_title!= info_blocks[3].title
+					.section_main_iconblock_text!= info_blocks[3].briefText
+					.section_main_iconblock_linkwrapper
+						a(onclick="onFullText(this)").section_main_iconblock_link read more			
+				.section_main_iconblock_inner
+					.section_main_popup3
+						p
+						button(class='section_main_popup_close' onclick='onCloseText(this)') x
+					.section_main_popup_triangle3
+					.section_main_popup_triangle3.white
+					if info_blocks[4].image.exists
+						.imageWrapper
+							img(class='section_main_iconblock_image' src=info_blocks[4].image.secure_url width='150' height='150').imageStyle
+							if info_blocks[4].imageActive.exists
+								img(class='section_main_iconblock_imageActive' src=info_blocks[4].imageActive.secure_url width='150' height='150').imageStyle
+					.section_main_iconblock_title!= info_blocks[4].title
+					.section_main_iconblock_text!= info_blocks[4].briefText
+					.section_main_iconblock_linkwrapper
+						a(onclick="onFullText(this)").section_main_iconblock_link read more
+				.section_main_iconblock_inner
+					.section_main_popup4
+						p
+						button(class='section_main_popup_close' onclick='onCloseText(this)') x
+					.section_main_popup_triangle4
+					.section_main_popup_triangle4.white
+					if info_blocks[5].image.exists
+						.imageWrapper
+							img(class='section_main_iconblock_image' src=info_blocks[5].image.secure_url width='150' height='150').imageStyle
+							if info_blocks[5].imageActive.exists
+								img(class='section_main_iconblock_imageActive' src=info_blocks[5].imageActive.secure_url width='150' height='150').imageStyle
+					.section_main_iconblock_title!= info_blocks[5].title
+					.section_main_iconblock_text!= info_blocks[5].briefText
+					.section_main_iconblock_linkwrapper
+						a(onclick="onFullText(this)").section_main_iconblock_link read more
+		.section_main_funcdescription
+			.section_main_funcdescription_block.gray
+				.section_main_funcdescription_image.right
+					.imageFullWrapper
+						if info_blocks[6].image.exists
+							img(src=info_blocks[6].image.secure_url).img-responsive
+				.section_main_funcdescription_block_content
+					.section_main_funcdescription_block_content_title!= info_blocks[6].title
+					.section_main_funcdescription_block_content_text!= info_blocks[6].briefText				
+			.section_main_funcdescription_block.backgrup
+				.section_main_funcdescription_image.left
+					.imageFullWrapper.gray
+						if info_blocks[7].image.exists
+							img(src=info_blocks[7].image.secure_url).img-responsive
+				.section_main_funcdescription_block_content
+					.section_main_funcdescription_block_content_title!= info_blocks[7].title
+					.section_main_funcdescription_block_content_text!= info_blocks[7].briefText
+			.section_main_funcdescription_block.gray
+				.section_main_funcdescription_image.right
+					.imageFullWrapper
+						if info_blocks[8].image.exists
+							img(src=info_blocks[8].image.secure_url).img-responsive
+				.section_main_funcdescription_block_content
+					.section_main_funcdescription_block_content_title!= info_blocks[8].title
+					.section_main_funcdescription_block_content_text!= info_blocks[8].briefText
+			.section_main_funcdescription_block.backgrdown
+				.section_main_funcdescription_image.left
+					.imageFullWrapper.gray
+						if info_blocks[9].image.exists
+							img(src=info_blocks[9].image.secure_url).img-responsive
+				.section_main_funcdescription_block_content
+					.section_main_funcdescription_block_content_title!= info_blocks[9].title
+					.section_main_funcdescription_block_content_text!= info_blocks[9].briefText
+		.section_main_whoisitfor
+			.section_main_whoisitfor_title!= info_blocks[10].title
+			.section_main_whoisitfor_blockoficons
+				.section_main_whoisitfor_iconwrapper
+					if info_blocks[11].image.exists
+						.section_main_whoisitfor_imageWrapper: img(src=info_blocks[11].image.secure_url width='70' height='70').imageStyle
+					.section_main_whoisitfor_iconwrapper_header!= info_blocks[11].title
+					.section_main_whoisitfor_iconwrapper_text!= info_blocks[11].briefText
+				.section_main_whoisitfor_iconwrapper
+					if info_blocks[12].image.exists
+						.section_main_whoisitfor_imageWrapper: img(src=info_blocks[12].image.secure_url width='70' height='70').imageStyle
+					.section_main_whoisitfor_iconwrapper_header!= info_blocks[12].title
+					.section_main_whoisitfor_iconwrapper_text!= info_blocks[12].briefText
+				.section_main_whoisitfor_iconwrapper
+					if info_blocks[13].image.exists
+						.section_main_whoisitfor_imageWrapper: img(src=info_blocks[13].image.secure_url width='70' height='70').imageStyle
+					.section_main_whoisitfor_iconwrapper_header!= info_blocks[13].title
+					.section_main_whoisitfor_iconwrapper_text!= info_blocks[13].briefText
+				.section_main_whoisitfor_iconwrapper
+					if info_blocks[14].image.exists
+						.section_main_whoisitfor_imageWrapper: img(src=info_blocks[14].image.secure_url width='70' height='70').imageStyle
+					.section_main_whoisitfor_iconwrapper_header!= info_blocks[14].title
+					.section_main_whoisitfor_iconwrapper_text!= info_blocks[14].briefText						
+		.section_main_dashboard
+			.section_main_dashboard_wrapper1
+				.section_main_dashboard_image_wrapper
+					if info_blocks[15].image.exists
+						.section_main_dashboard_image: img(src=info_blocks[15].image.secure_url).img-responsive
+				.section_main_dashboard_content
+					.section_main_dashboard_content_title!= info_blocks[15].title
+					.section_main_dashboard_content_text!= info_blocks[15].briefText
+			.section_main_dashboard_wrapper2
+				.section_main_dashboard_image_wrapper
+					if info_blocks[16].image.exists
+						.section_main_dashboard_image: img(src=info_blocks[16].image.secure_url).img-responsive
+				.section_main_dashboard_content
+					.section_main_dashboard_content_title!= info_blocks[16].title
+					.section_main_dashboard_content_text!= info_blocks[16].briefText
+			.section_main_dashboard_wrapper3
+				.section_main_dashboard_image_wrapper
+					if info_blocks[17].image.exists
+						.section_main_dashboard_image: img(src=info_blocks[17].image.secure_url).img-responsive
+				.section_main_dashboard_content
+					.section_main_dashboard_content_title!= info_blocks[17].title
+					.section_main_dashboard_content_text!= info_blocks[17].briefText
+			.section_main_dashboard_wrapper4
+				.section_main_dashboard_image_wrapper
+					if info_blocks[18].image.exists
+						.section_main_dashboard_image: img(src=info_blocks[18].image.secure_url).img-responsive
+				.section_main_dashboard_content
+					.section_main_dashboard_content_title!= info_blocks[18].title
+					.section_main_dashboard_content_text!= info_blocks[18].briefText
+			.section_main_dashboard_wrapper5
+				.section_main_dashboard_image_wrapper
+					if info_blocks[19].image.exists
+						.section_main_dashboard_image: img(src=info_blocks[19].image.secure_url).img-responsive
+				.section_main_dashboard_content
+					.section_main_dashboard_content_title!= info_blocks[19].title
+					.section_main_dashboard_content_text!= info_blocks[19].briefText
+			.section_main_dashboard_wrapper6
+				.section_main_dashboard_image_wrapper
+					if info_blocks[20].image.exists
+						.section_main_dashboard_image: img(src=info_blocks[20].image.secure_url).img-responsive
+				.section_main_dashboard_content
+					.section_main_dashboard_content_title!= info_blocks[20].title
+					.section_main_dashboard_content_text!= info_blocks[20].briefText	
+			.section_main_dashboard_switchers
+				.section_main_dashboard_switcher(onclick='onChangeDashboard(1)')
+				.section_main_dashboard_switcher(onclick='onChangeDashboard(2)')
+				.section_main_dashboard_switcher(onclick='onChangeDashboard(3)')
+				.section_main_dashboard_switcher(onclick='onChangeDashboard(4)')
+				.section_main_dashboard_switcher(onclick='onChangeDashboard(5)')
+				.section_main_dashboard_switcher(onclick='onChangeDashboard(6)')
+		.section_main_anyplace
+			.section_main_anyplace_title!= info_blocks[21].title
+			.section_main_anyplace_text!= info_blocks[21].briefText
+			if info_blocks[21].image.exists
+				.imageFullWrapper.top: img(src=info_blocks[21].image.secure_url).img-responsive
+				
+				

@@ -1,0 +1,166 @@
+extends ../layouts/default
+
+block content
+	.wrapper
+		.section_product_image
+			img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496067166/div_top_mlksbn.png').img-responsive
+		div.section_product_mainpromo
+			.section_product_mainpromo_triangle
+			.section_product_mainpromo_cloud
+				.section_product_mainpromo_title!= main_promo.title
+				.section_product_mainpromo_text!= main_promo.text
+		.section_product_info-blocks
+			if info_blocks.length
+				each block in info_blocks
+					if block == info_blocks[0] || block == info_blocks[2]
+						div.section_product_info-block
+							.section_product_info_blocks_image.right
+								.imageFullWrapper.gray
+									if block.image.exists
+										img(src=block.image.secure_url).section_product_info-block-img
+							.section_product_info-blocks_content
+								.section_product_info-blocks_content_title!= block.title
+								.section_product_info-blocks_content_text!= block.text
+					else	
+						div.section_product_info-block.gray
+							.section_product_info_blocks_image.left
+								.imageFullWrapper
+									if block.image.exists
+										img(src=block.image.secure_url).section_product_info-block-img
+							.section_product_info-blocks_content
+								.section_product_info-blocks_content_title!= block.title
+								.section_product_info-blocks_content_text!= block.text
+		div.section_product_infogr
+			.section_product_infogr_title!= infogr.title
+			.section_product_infogr_text!= infogr.text
+			.section_product_graph_wrapper
+				.section_product_graph_row
+					.section_product_graph
+						.section_product_graph_popup.section_product_graph_popup1
+							.section_product_graph_triangle.section_product_graph_triangle1
+							.section_product_graph_white_triangle.section_product_graph_white_triangle1
+							.section_product_graph_popup_title Energy
+							.section_product_graph_popup_text Every organisation has a culture which shapes and steers it behaviours and activities. This is the same for teams. Successful teams have a positive ‘can-do’ culture which is usually coupled with high levels of energy or drive within the team. This may come from dynamic leadership, the team members themselves or ideally a combination of both. Nurturing a positive culture and encouraging high energy levels is the role of every team member, and especially the leader.
+							button(onclick='onProductClose(this)') x
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057085/Energy_uamqc8.png' onclick='onProductShow(this)')
+						p Energy
+					.section_product_graph
+						.section_product_graph_popup.section_product_graph_popup2
+							.section_product_graph_triangle.section_product_graph_triangle2
+							.section_product_graph_white_triangle.section_product_graph_white_triangle2
+							.section_product_graph_popup_title Leadership
+							.section_product_graph_popup_text Leading a team is a critical skill within any organisation. A leader should be an excellent team manger, have good situational awareness and be able to offer clear and concise communication to those around them. The leader should demonstrate high levels of personal resilience and integrity while being able to motivate and manage a diverse group of people and skills to get the job done.
+							button(onclick='onProductClose(this)') x
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057085/Leadership_p7nsux.png' onclick='onProductShow(this)')
+						p Leadership
+					.section_product_graph
+						.section_product_graph_popup.section_product_graph_popup3
+							.section_product_graph_triangle.section_product_graph_triangle3
+							.section_product_graph_white_triangle.section_product_graph_white_triangle3
+							.section_product_graph_popup_title Trust
+							.section_product_graph_popup_text
+							| This is obviously critically important for teams to function at high level. we don't have to be friends with each other,
+							| but we do need to get on and respect one another. Simple, human interactions are necessary for teams to function.
+							| Politeness, respect and having some fun together all help build solid relationships and aid the team's outputs.
+							button(onclick='onProductClose(this)') x
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057085/Trust_zyede7.png' onclick='onProductShow(this)')
+						p Trust	
+						
+				.section_product_graph_row
+					.section_product_graph
+						.section_product_graph_popup.section_product_graph_popup4
+							.section_product_graph_triangle.section_product_graph_triangle4
+							.section_product_graph_white_triangle.section_product_graph_white_triangle4
+							.section_product_graph_popup_title Capability
+							.section_product_graph_popup_text
+							| The team should know what is expected of them, and how this is broken down per
+							| individual. This should all link to the overall direction and vision of the team - ‘if you
+							| don’t know where you’re going, you won’t know when you get there’. The team also
+							| needs to know the vision is an achievable goal given the capabilities within the team.
+							| A strong passion for development and learning helps great teams consistently build on
+							| their capabilities.
+							button(onclick='onProductClose(this)') x
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057085/Capability_mlgznz.png' onclick='onProductShow(this)')
+						p Capability
+					.section_product_graph
+						.section_product_graph_popup.section_product_graph_popup5
+							.section_product_graph_triangle.section_product_graph_triangle5
+							.section_product_graph_white_triangle.section_product_graph_white_triangle5
+							.section_product_graph_popup_title Delivery
+							.section_product_graph_popup_text
+							| Getting the job done is why people are employed. Each person have to fulfill ther own job role,
+							| but people have to interact well to get their job done. The whole team has to deliver
+							| it's function, and everyone needs to understand how their own role fits. The team needs
+							| clear objectives and a plan on how to achieve this. When things are not going well, it's about
+							| pulling skills and resourses together. When the team are on top of things, it's about sharing and celebrting success.
+							button(onclick='onProductClose(this)') x
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057084/Delivery_x5edeb.png' onclick='onProductShow(this)')
+						p Delivery
+					.section_product_graph
+						.section_product_graph_popup.section_product_graph_popup6
+							.section_product_graph_triangle.section_product_graph_triangle6
+							.section_product_graph_white_triangle.section_product_graph_white_triangle6
+							.section_product_graph_popup_title Harmony
+							.section_product_graph_popup_text
+							| Communication should not be mistaken for just talking. It’s a critical two-way process
+							| that requires energy and engagement from all those involved. It requires respect for
+							| and appreciation of a diversity of opinions. In successful teams people are
+							| comfortable expressing and listening to opinions that are different and having a
+							| constructive dialogue to make optimal choices.
+							button(onclick='onProductClose(this)') x
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057084/Harmony_yyk9st.png' onclick='onProductShow(this)')
+						p Harmony	
+						
+				.section_product_graph_row
+					.section_product_graph
+						.section_product_graph_popup.section_product_graph_popup7
+							.section_product_graph_triangle.section_product_graph_triangle7
+							.section_product_graph_white_triangle.section_product_graph_white_triangle7
+							.section_product_graph_popup_title Stakeholders
+							.section_product_graph_popup_text
+							| Teams do not operate in isolation from others, and those that work well with their
+							| stakeholders achieve more. Interteam
+							| relationships need to be functioning at a high level in order to deliver
+							| the company targets and outcomes. Relationships with customers and suppliers of the
+							| team also need to be nurtured.
+							button(onclick='onProductClose(this)') x
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057084/Stakeholder_owqoqd.png' onclick='onProductShow(this)')
+						p Stakeholders
+					.section_product_graph
+						.section_product_graph_popup.section_product_graph_popup8
+							.section_product_graph_triangle.section_product_graph_triangle8
+							.section_product_graph_white_triangle.section_product_graph_white_triangle8
+							.section_product_graph_popup_title Accountability
+							.section_product_graph_popup_text
+							| Teams are being asked to work in ever more isolation from central management. To be
+							| effective, teams must fully understand their roles and responsibilities - both during
+							| normal operating practices and when things change with little notice. Teams need to
+							| be well led and supported to deliver on their goals and objectives and must be
+							| committed to achieving agreed goals.
+							button(onclick='onProductClose(this)') x
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057084/Accountability_nyfgfd.png' onclick='onProductShow(this)')
+						p Accountability
+					.section_product_graph
+						.section_product_graph_popup.section_product_graph_popup9
+							.section_product_graph_triangle.section_product_graph_triangle9
+							.section_product_graph_white_triangle.section_product_graph_white_triangle9
+							.section_product_graph_popup_title Resilience
+							.section_product_graph_popup_text
+							| Change is no longer the exception - it is often the norm. At the same time,
+							| organisations require more for less and teams teams are expected to achieve more
+							| too. This in turn generates more pressure on the team. In addition, when things get
+							| tough, resilience is key. To have a resilient team you need the team members must be
+							| strong, confident and well supported.
+							button(onclick='onProductClose(this)') x
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057084/Resilience_dybzxj.png' onclick='onProductShow(this)')
+						p Resilience	
+		div.section_product_footer-promo
+			.section_product_footer-promo_title!= footer_promo.title
+			.section_product_footer-promo_text!= footer_promo.text
+			.section_product_footer-promo_links
+				a(class='section_product_footer-promo_checkPDF' href='http://www.tangramtraining.com/wp-content/uploads/2016/01/Premiere-Farnell-Team-day-at-Denton-18th-Sept-14-169-300x225.jpg' target='_blank') Check PDF
+				a(class='section_product_footer-promo_pricing' href='/pricing' target='_blank') Pricing
+			
+						
+
+				

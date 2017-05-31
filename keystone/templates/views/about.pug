@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block content
+	.wrapper.border
+		.section_about_title!= header.section
+		if clients.length
+			each clientArr in clients
+				.section_about_clients-container
+					each client in clientArr
+						.section_about_clients_row
+							.section_about_clients_logo-container
+								if client.logo.exists
+									img(src=client.logo.secure_url).section_about_clients_logo
+							.section_about_clients_content
+								.section_about_clients_content_title!= client.title
+								.section_about_clients_content_text!= client.clientDescription

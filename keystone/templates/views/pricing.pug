@@ -1,0 +1,64 @@
+extends ../layouts/default
+
+block content
+	.wrapper
+		div.section_pricing_pricetable
+			.section_pricing_title!= info_blocks[0].title
+			.section_pricing_pricetable_wrapper
+				.section_pricing_pricetable_column
+					.section_pricing_pricetable_image
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057084/Bronze_e2szqj.png')
+					.section_pricing_pricetable_title!= info_blocks[1].title
+					ul.section_pricing_pricetable1
+						li Data reports
+						li Dashboards
+						li Sharing
+						li Community and actions
+					.section_pricing_pricetable_price!= info_blocks[1].price
+				.section_pricing_pricetable_column
+					.section_pricing_pricetable_image
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057084/Silver_dy5q2e.png')
+					.section_pricing_pricetable_title!= info_blocks[2].title
+					ul.section_pricing_pricetable2
+						li Data reports
+						li Multiple Dashboards
+						li Next Best Actions
+						li Multiple Use by Team
+					.section_pricing_pricetable_price!= info_blocks[2].price
+				.section_pricing_pricetable_column
+					.section_pricing_pricetable_image
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057084/Gold_i7yrim.png')
+					.section_pricing_pricetable_title!= info_blocks[3].title
+					ul.section_pricing_pricetable3
+						li KPI Uploads
+						li Unlimited Testing
+						li Deeper Insights
+						li Nudges and Pulses
+					.section_pricing_pricetable_price!= info_blocks[3].price
+				.section_pricing_pricetable_column
+					.section_pricing_pricetable_image
+						img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496057084/Enterprise_nztxqp.png')
+					.section_pricing_pricetable_title!= info_blocks[4].title
+					ul.section_pricing_pricetable4
+						li Totally bespoke
+						li White Label
+						li Online Support
+						li Benchmarking
+					.section_pricing_pricetable_price!= info_blocks[4].price
+		.section_pricing_questions
+			each question in data
+				.section_pricing_question_wrapper
+					.section_pricing_question(onclick='onShow(this)')!= question.question
+					.section_pricing_answer!= question.answer
+		.section_pricing_bestclients
+			.section_pricing_bestclients_title!= info_blocks[5].title
+			.section_pricing_bestclients_logos
+				.section_pricing_bestclients_logo
+					img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496055138/pricing_logo_kujxhu.png')
+				.section_pricing_bestclients_logo
+					img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496055138/pricing_logo_kujxhu.png')
+				.section_pricing_bestclients_logo
+					img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496055138/pricing_logo_kujxhu.png')
+				.section_pricing_bestclients_logo
+					img(src='http://res.cloudinary.com/doxqhi2yr/image/upload/v1496055138/pricing_logo_kujxhu.png')
+					
