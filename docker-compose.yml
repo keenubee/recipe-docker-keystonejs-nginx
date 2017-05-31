@@ -28,7 +28,6 @@ services:
       - app-tier
 
   keystone:
-    image: "keystone:latest"
     volumes:
       - ./keystone/keystone.js:/usr/src/app/keystone.js
       - ./keystone/models:/usr/src/app/models
@@ -37,6 +36,7 @@ services:
       - ./keystone/public:/usr/src/app/public
       - ./keystone/temp:/usr/src/app/temp
       - ./keystone/templates:/usr/src/app/templates
+    image: "keystone:latest"
     ports:
       - "3000:3000"
     links:
