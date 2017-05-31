@@ -10,7 +10,7 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'mongo': "mongodb://mongodb/keystone",
+	'mongo': process.env.MONGO_URI || 'mongodb://webuser:1234@mongodb/website',
 	'name': 'TeamKITE',
 	'brand': 'TeamKITE',
 
