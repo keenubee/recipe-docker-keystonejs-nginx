@@ -10,6 +10,7 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
+	'mongo': "mongodb://mongodb",
 	'name': 'TeamKITE',
 	'brand': 'TeamKITE',
 
