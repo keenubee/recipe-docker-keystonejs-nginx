@@ -37,6 +37,9 @@ services:
       - ./keystone/models:/usr/src/app/models
       - ./keystone/routes:/usr/src/app/routes
       - ./keystone/updates:/usr/src/app/updates
+      - ./keystone/public:/usr/src/app/public
+      - ./keystone/temp:/usr/src/app/temp
+      - ./keystone/templates:/usr/src/app/templates
     ports:
       - "3000:3000"
     links:
