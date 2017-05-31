@@ -28,10 +28,7 @@ services:
       - app-tier
 
   keystone:
-    build:
-      context: ./keystone
-      args:
-        app_env: ${APP_ENV}
+    image: "keystone:latest"
     volumes:
       - ./keystone/keystone.js:/usr/src/app/keystone.js
       - ./keystone/models:/usr/src/app/models
